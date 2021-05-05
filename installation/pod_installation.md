@@ -8,7 +8,9 @@
 2. Активировать чек-бокс `Copy items if needed`
 3. Создать `podfile` и отредактировать таким образом, чтобы библиотека `ZGRImSDK.xcframework` устанавливалась и в основное 
 приложение и в расширения.
+
     ![Пример podfile](./Image_3.png)
+    
 4. Убедиться, что `pod` c библиотекой будет копироваться в бандл вашего приложения посредством установки пункта `Embed & Sign`
     ![Изображение 4](./Image_4.png)
     
@@ -60,7 +62,7 @@
     ![Изображение окна ввода](./App_Group.png)
         
   
-  #### Без изменений повторить шаги 1-6 для таргетов `Notification Service Extension` и `Notification Content Extension`.
+#### Без изменений повторить шаги 1-6 для таргетов `Notification Service Extension` и `Notification Content Extension`.
     ![Изображение 1](./App_Group_6.png)
     ![Изображение 2](./App_Group_4.png)
     ![Изображение 3](./App_Group_5.png)
