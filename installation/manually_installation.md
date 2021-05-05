@@ -75,5 +75,5 @@
   #### Без изменений повторить шаги 1-6 для таргетов `Notification Service Extension` и `Notification Content Extension`.
     ![Изображение 1](./App_Group_1.png)
     ![Изображение 2](./App_Group_2.png)
-    ![Изображение 3](./App_Group_3.png)
+    	![Изображение 3](./App_Group_3.png)
     
