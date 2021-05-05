@@ -1,0 +1,21 @@
+PODS:
+  - ZGRImSDK (1.1.4)
+
+DEPENDENCIES:
+  - ZGRImSDK (from `https://github.com/zgr-im/zgr-push-service-ios-sdk.git`)
+
+EXTERNAL SOURCES:
+  ZGRImSDK:
+    :git: https://github.com/zgr-im/zgr-push-service-ios-sdk.git
+
+CHECKOUT OPTIONS:
+  ZGRImSDK:
+    :commit: 149db8c1d64de6b65474ee32f03f90824ae4c5bb
+    :git: https://github.com/zgr-im/zgr-push-service-ios-sdk.git
+
+SPEC CHECKSUMS:
+  ZGRImSDK: 8c9f990e1b9eac6dc19c5dbff69b3d25a4430dc7
+
+PODFILE CHECKSUM: c955dc964357d9ababfc1d6bf78cfb58e3354393
+
+COCOAPODS: 1.10.1

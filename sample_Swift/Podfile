@@ -1,0 +1,22 @@
+platform :ios, '11.0'
+
+target 'Demo Push App' do
+  use_frameworks!
+
+  pod 'ZGRImSDK', :git => 'https://github.com/zgr-im/zgr-push-service-ios-sdk.git'
+
+end
+
+target 'notification-content' do
+  use_frameworks!
+
+  pod 'ZGRImSDK', :git => 'https://github.com/zgr-im/zgr-push-service-ios-sdk.git'
+
+end
+
+target 'notification-service' do
+  use_frameworks!
+
+  pod 'ZGRImSDK', :git => 'https://github.com/zgr-im/zgr-push-service-ios-sdk.git'
+
+end
