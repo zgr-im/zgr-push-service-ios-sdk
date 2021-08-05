@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) NSString *title;
 @property (nonatomic, nullable, copy) NSString *subtitle;
 @property (nonatomic, nullable, copy) NSString *text;
+@property (nonatomic, nullable, copy) NSString *status;
 
 @property (nonatomic, nullable, strong) ZGRContent *content; /**< Notification media content */
 @property (nonatomic, nullable, copy) NSArray<ZGRAction *> *actions; /**< Notification actions */

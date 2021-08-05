@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)resetToEmbeddedConfig;
 
+/**
+ @brief Return string with current number version of SDK 
+ */
+- (NSString *)getSDKVersion;
+
 + (nullable instancetype)sharedInstance;
 
 + (instancetype)new NS_UNAVAILABLE;
