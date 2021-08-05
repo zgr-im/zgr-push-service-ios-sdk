@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "ZGRImSDK"
-  spec.version      = "1.1.4"
+  spec.version      = "1.2.0"
   spec.summary      = "ZGRImSDK.xcframework is a push-service library."
   spec.description  = <<-DESC
 	ZGRImSDK.xcframework is a push-service library working with APNS.

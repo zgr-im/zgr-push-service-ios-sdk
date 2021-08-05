@@ -7,13 +7,11 @@ let package = Package(
         .iOS(.v11)
     ],
     products: [
-        .library(
-            name: "ZGRImSDK",
-            targets:["ZGRImSDK"])
+        .library(name: "ZGRImSDK", targets: ["ZGRImSDK"])
     ],
-    targets:[
-        .binaryTarget(
-            name: "ZGRImSDK",
-            url: "https://github.com/zgr-im/zgr-push-service-ios-sdk/releases/download/1.1.4/ZGRImSDK.xcframework.zip",
-            checksum: "0b9a10eecb95c27d59987c72624e997df01c3a0189ced54395c0bab7fda6324d")
-    ])
+    targets: [
+        .binaryTarget(name: "ZGRImSDK",
+                      url: "https://github.com/zgr-im/zgr-push-service-ios-sdk/releases/download/1.2.0/ZGRImSDK.xcframework.zip",
+                      checksum: "9671a43a0dd9a1c8a95ed40365967f621f63b01a5445193409d6a419f491cd08")
+    ]
+)
