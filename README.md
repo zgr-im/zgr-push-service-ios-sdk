@@ -28,10 +28,11 @@
 
 ## Установка библиотеки в приложение
 
-В настоящий момент доступны три варианта установки:
+В настоящий момент доступны четыре варианта установки:
 * вручную (процесс подробно изложен в файле `manually_installation.md` в каталоге `installation`),
-* в качестве `pod` с помощью менеджера пакетов CocoaPods (файл `pod_installation.md` в каталоге `installation`).
-* с помощью менеджера пакетов Carthage (файл `carthage_installation.md` в каталоге `installation`).
+* в качестве `pod` с помощью менеджера пакетов CocoaPods (файл `pod_installation.md` в каталоге `installation`),
+* с помощью менеджера пакетов Carthage (файл `carthage_installation.md` в каталоге `installation`),
+* с помощью Swift Package Manager (файл `spm_installation.md` в каталоге `installation`).
 
 
 ## Интеграция приложения с APNS
