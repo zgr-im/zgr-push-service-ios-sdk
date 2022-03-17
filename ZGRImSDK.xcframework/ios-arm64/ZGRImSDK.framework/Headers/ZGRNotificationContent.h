@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZGRNotificationContent : NSObject
 
 - (void)didLoadView:(UIView *)view;
-- (void)didReceiveNotification:(UNNotification *)notification;
+- (void)didReceiveNotification:(UNNotification *)notification completionHandler:(void(^)(NSArray<UNNotificationAction *>* _Nullable notificationActions))completionHandler;
 
 + (instancetype)sharedInstance;
 

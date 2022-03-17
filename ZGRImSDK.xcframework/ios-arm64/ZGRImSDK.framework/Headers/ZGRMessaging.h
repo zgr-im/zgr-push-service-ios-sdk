@@ -24,14 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, null_resettable, readonly) ZGRConfig *config;
 
 /**
- @brief Current device id. Default: value, stored in`installationId`.
+ @brief Current device id. Default: [[[UIDevice currentDevice] identifierForVendor] UUIDString].
  */
-@property (nonatomic, null_resettable, copy) NSUUID *deviceId;
+@property (nonatomic, null_resettable, copy) NSString *deviceId;
 
 /**
- @brief Current installation id. Default: [[UIDevice currentDevice] identifierForVendor].
+ @brief Current installation id. Default: [[ZGRDatabase sharedInstance] getInstallationId]. If default is nil, then [_random randomUUIDString]
  */
-@property (nonatomic, null_resettable, copy) NSUUID *installationId;
+@property (nonatomic, null_resettable, copy) NSString *installationId;
 
 /**
  @brief Precreated shared instance.
@@ -159,6 +159,13 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  @param completionHandler Completion handler.
  */
 - (void)deleteNotification:(ZGRNotification *)notification withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
+
+/**
+ @brief Delete array of notifications from local database.
+ @param array Array of notifications to delete.
+ @param completionHandler Completion handler.
+ */
+- (void)deleteNotificationsArray:(NSArray<ZGRNotification *> *)array withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
 
 @end
 
