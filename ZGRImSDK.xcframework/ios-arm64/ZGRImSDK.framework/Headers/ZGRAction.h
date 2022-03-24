@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, ZGRActionType) {
 /**
  @brief Notification action (default content click or button under rich-content)
  */
-@interface ZGRAction : NSObject <NSCoding>
+@interface ZGRAction : NSObject
 
 @property (nonatomic, assign, readonly) ZGRActionType type;
 @property (nonatomic, copy, readonly) NSString *identifier;
@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, ZGRActionType) {
 
 - (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
 - (instancetype)initWithNotificationResponse:(UNNotificationResponse *)response;
+- (instancetype)initWithIdentifier:(NSString *)identifier title:(NSString *)title;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;

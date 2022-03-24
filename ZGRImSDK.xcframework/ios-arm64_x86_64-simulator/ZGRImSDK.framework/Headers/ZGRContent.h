@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, ZGRContentType) {
 /**
  @brief Notification media content.
  */
-@interface ZGRContent : NSObject <NSCoding>
+@interface ZGRContent : NSObject
 
 @property (nonatomic, assign, readonly) ZGRContentType type;
 @property (nonatomic, strong, readonly) NSURL *url;
@@ -21,6 +21,9 @@ typedef NS_ENUM(NSInteger, ZGRContentType) {
 - (nullable NSString *)rawType;
 
 - (nullable instancetype)initWithUserInfo:(NSDictionary *)userInfo;
+- (nullable instancetype)initWithURL:(NSURL *)url type:(ZGRContentType)type;
+
++ (ZGRContentType)contentTypeFromString:(NSString *)string;
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
