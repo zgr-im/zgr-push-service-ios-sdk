@@ -587,6 +587,22 @@ ZGRMessaging.sharedInstance().delete(notification) { success, error in
 
 ```
 
+#### Удаление массива уведомлений из базы данных.
+
+Objective-C:
+
+```
+
+[[ZGRMessaging sharedInstance] deleteNotificationsArray:(NSArray<ZGRNotification *> *)array withCompletionHandler:^(BOOL success, ZGRError * _Nullable error) {
+    if (!success) {
+        return;
+    }
+
+    // Perform any code
+}];
+
+```
+
 
 ## Настройка расширений приложения
 
