@@ -40,6 +40,82 @@
 Необходимо включить возможность отправки пуш-нотификаций в настройках проекта, а также в настройках аккаунта разработчика. После этого на старте приложения регистрировать его в службе APNS и получать уникальный токен для устройства. Подробно процесс описан здесь: https://developer.apple.com/documentation/usernotifications/registering_your_app_with_apns?language=objc
 
 
+## Новые возможности, доступные в релизе 1.6.1
+
+### Интерфейс для изменения статуса уведомлений ZGRNotification
+
+Использование:
+
+```
+
+[[ZGRMessaging sharedInstance] updateNotification:notif status:@"Seen" withCompletionHandler:^{
+    // Perform any code
+}];
+
+```
+
+Сигнатура метода:
+
+```
+
+/**
+ @brief Update notification's status in local database.
+ @param notification Notification to update.
+ @param status Status to update. Must be "New" or "Seen".
+ @param completionHandler Completion handler.
+ */
+ 
+- (void)updateNotification:(ZGRNotification *)notification status:(NSString *)status withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
+
+```
+
+### Метод для изменения счётчика пушей в бейдже приложения
+
+Использование (допустим в appDelegate.m):
+
+```
+[[ZGRMessaging sharedInstance] application:app setApplicationBadgeNumber:5];
+
+
+```
+
+Сигнатура метода:
+
+```
+
+/**
+ @brief Set application badge number
+ @param application Current application.
+ @param number number that setted.
+*/
+
+- (void)application:(UIApplication *)application setApplicationBadgeNumber:(NSInteger)number;
+
+```
+
+### Рассылка системной нотификации в момент открытия пуша
+
+В необходимом файле (допустим в appDelegate.m) подписываемся на событие:
+
+```
+
+[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleDidOpenPushNotification:) name:ZGRDidOpenRemoteNotificationKey object:nil];
+
+```
+
+И прописываем метод-обработчик события:
+
+```
+
+- (void)handleDidOpenPushNotification:(NSNotification*)paramNotification {
+    ZGRNotification *notification = (ZGRNotification *)paramNotification.userInfo[@"notification"];
+    NSLog(@" ----->>> handleDidOpenPushNotification called. id = %@, date = %@, status = %@, customPayload = %@", notification.identifier, notification.date, notification.status, notification.customPayload);
+}
+
+```
+
+
+
 ## Быстрый гайд
 
 
