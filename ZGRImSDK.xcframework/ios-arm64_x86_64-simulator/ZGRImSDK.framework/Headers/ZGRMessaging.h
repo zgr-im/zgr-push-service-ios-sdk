@@ -1,5 +1,6 @@
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h>
 
 @class UIApplication;
@@ -53,14 +54,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  @brief Try to handle silent and VOIP push notifications. If notification isn't from ZGR, this method returns NO.
- @param application Notification center instance.
+ @param application Current application.
  @param userInfo Notification response.
 */
 - (BOOL)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo;
 
 /**
  @brief Try to handle silent and VOIP push notifications. If notification isn't from ZGR, this method returns NO and callback will not be called.
- @param application Notification center instance.
+ @param application Current application.
  @param userInfo Notification response.
  @param completionHandler Handled notification..
 */
@@ -82,6 +83,20 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(nullable void(^)(ZGRNotification * _Nonnull notification,
                                                                                                           ZGRAction * _Nonnull selectedAction))completionHandler;
+
+/**
+ @brief Try to show web page with url passed through action button in push notification.
+ @param url Url of page
+ @param vc App's main view controller.
+ */
+- (void)showLinkPageWithURL:(NSURL *)url andViewController:(UIViewController *)vc;
+
+/**
+ @brief Set application badge number
+ @param application Current application.
+ @param number number that setted.
+*/
+- (void)application:(UIApplication *)application setApplicationBadgeNumber:(NSInteger)number;
 
 @end
 
@@ -166,6 +181,14 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
  @param completionHandler Completion handler.
  */
 - (void)deleteNotificationsArray:(NSArray<ZGRNotification *> *)array withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
+
+/**
+ @brief Update notification's status in local database.
+ @param notification Notification to update.
+ @param status Status to update. Must be "New" or "Seen".
+ @param completionHandler Completion handler.
+ */
+- (void)updateNotification:(ZGRNotification *)notification status:(NSString *)status withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
 
 @end
 
