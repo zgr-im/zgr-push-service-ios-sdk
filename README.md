@@ -42,9 +42,12 @@
 
 ## Новые возможности, доступные в релизе 1.6.1
 
-### Интерфейс для изменения статуса уведомлений ZGRNotification
+Все примеры приведены с использованием Objective-C 
 
-Использование:
+
+###  Метод для изменения статуса уведомлений ZGRNotification
+
+Использование
 
 ```
 
@@ -70,13 +73,14 @@
 
 ```
 
+
 ### Метод для изменения счётчика пушей в бейдже приложения
 
 Использование (допустим в appDelegate.m):
 
 ```
-[[ZGRMessaging sharedInstance] application:app setApplicationBadgeNumber:5];
 
+[[ZGRMessaging sharedInstance] application:app setApplicationBadgeNumber:5];
 
 ```
 
@@ -94,9 +98,10 @@
 
 ```
 
+
 ### Рассылка системной нотификации в момент открытия пуша
 
-В необходимом файле (допустим в appDelegate.m) подписываемся на событие:
+В необходимом файле (допустим в appDelegate.m) подписываемся на событие ZGRDidOpenRemoteNotificationKey:
 
 ```
 
