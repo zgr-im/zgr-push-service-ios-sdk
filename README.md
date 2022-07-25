@@ -65,7 +65,8 @@
  @param completionHandler Completion handler.
  */
  
-- (void)updateNotification:(ZGRNotification *)notification status:(NSString *)status withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
+- (void)updateNotification:(ZGRNotification *)notification status:(NSString *)status 
+        withCompletionHandler:(void(^)(BOOL success, ZGRError * _Nullable error))completionHandler;
 
 ```
 
@@ -99,7 +100,8 @@
 
 ```
 
-[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleDidOpenPushNotification:) name:ZGRDidOpenRemoteNotificationKey object:nil];
+[NSNotificationCenter.defaultCenter addObserver:self selector:@selector(handleDidOpenPushNotification:) 
+        name:ZGRDidOpenRemoteNotificationKey object:nil];
 
 ```
 
@@ -109,7 +111,8 @@
 
 - (void)handleDidOpenPushNotification:(NSNotification*)paramNotification {
     ZGRNotification *notification = (ZGRNotification *)paramNotification.userInfo[@"notification"];
-    NSLog(@" ----->>> handleDidOpenPushNotification called. id = %@, date = %@, status = %@, customPayload = %@", notification.identifier, notification.date, notification.status, notification.customPayload);
+    NSLog(@" handleDidOpenPushNotification called. id = %@, status = %@, customPayload = %@", 
+            notification.identifier, notification.status, notification.customPayload);
 }
 
 ```
