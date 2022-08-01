@@ -76,14 +76,26 @@
 
 ### Метод для изменения счётчика пушей в бейдже приложения
 
-Использование в appDelegate.m:
+Использование (допустим в appDelegate.m):
 
 ```
 
-[self zgr_setApplicationBadgeNumber:5];
+[[ZGRMessaging sharedInstance] application:app setApplicationBadgeNumber:number];
 
 ```
 
+Сигнатура метода:
+
+```
+
+/**
+ @brief Set application badge number
+ @param application Current application.
+ @param number number that setted.
+*/
+- (void)application:(UIApplication *)application setApplicationBadgeNumber:(NSInteger)number;
+
+```
 
 
 ### Рассылка системной нотификации в момент открытия пуша
